@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "npx parcel src/index.html",
-    "build": "rm -rf dist && rm -rf .parcel-cache && npx parcel build src/index.html --public-url https://kerala-startup-mission.github.io/card-reader/",
+    "build": "rm -rf dist && rm -rf .parcel-cache && npx parcel build src/index.html --public-url https://kerala-startup-mission.github.io/card-reader/dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
