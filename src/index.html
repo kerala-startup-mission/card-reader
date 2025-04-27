@@ -34,7 +34,7 @@
       Connect
     </button>
 
-    <div id="content" class="w-full">
+    <div id="content" class="w-full connected
       <div id="text" class="mb-5 font-bold text-center">Tap card on reader</div>
 
       <label class="block mb-5">
@@ -219,6 +219,30 @@
       return [fc, cn];
 
     }
+
+    matrix_input.addEventListener('change', function(e){
+      var matrix_code= parseInt(e.target.value);
+
+      var cardHex = matrix_code.toString(16);
+
+      var [fc1, cn1] = get_hid_code_one(cardHex);
+      var [fc2, cn2] = get_hid_code_two(cardHex);
+
+      console.log(cardHex, matrix_code, fc1, cn1, fc2, cn2);
+
+      uidDisplay.value = cardHex;
+
+      matrix_input.value = matrix_code;
+          
+      fc1_input.value = fc1;
+      cn1_input.value = cn1;
+
+      fc2_input.value = fc2;
+      cn2_input.value = cn2;
+
+      beep();
+      
+    })
 
   </script>
 </body>
